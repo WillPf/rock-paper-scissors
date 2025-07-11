@@ -14,15 +14,13 @@ container.addEventListener("click", (e) => {
     playRound(e.target.id, getComputerChoice()); 
 })
 
-function showResult(player, computer) {
-    let p = document.createElement("img");
-    p.src = `./assets/${player}.jpg`;
-    p.classList.add("choice-img");
-    let c = document.createElement("img");
-    c.src = `./assets/${computer}.jpg`;
-    c.classList.add("choice-img");
-    resultContainer.appendChild(p);
-    resultContainer.appendChild(c);
+function showResult(players) {
+    for (const player of players) {
+        let p = document.createElement("img");
+        p.src = `./assets/${player}.jpg`;
+        p.style.cssText = "border-radius: 25px";
+        resultContainer.appendChild(p);
+    }
 }
 
 
@@ -33,29 +31,29 @@ function getComputerChoice() {
 
 function playRound(humanChoice, computerChoice) {    
     if (humanChoice === computerChoice)  {
-        showResult(humanChoice, computerChoice);
+        showResult([humanChoice, computerChoice]);
     } else if (humanChoice === "rock") {
         if (computerChoice === "scissors") {
-            showResult(humanChoice, computerChoice);
+            showResult([humanChoice, computerChoice]);
             humanScore++;
         } else {
-            showResult(humanChoice, computerChoice);
+            showResult([humanChoice, computerChoice]);
             computerScore++;
         }
     } else if (humanChoice === "paper") {
         if (computerChoice === "rock") {
-            showResult(humanChoice, computerChoice);
+            showResult([humanChoice, computerChoice]);
             humanScore++;
         } else {
-            showResult(humanChoice, computerChoice);
+            showResult([humanChoice, computerChoice]);
             computerScore++;
         }
     } else if (humanChoice === "scissors") {
         if (computerChoice === "paper") {
-            showResult(humanChoice, computerChoice);
+            showResult([humanChoice, computerChoice]);
             humanScore++;
         } else {
-            showResult(humanChoice, computerChoice);
+            showResult([humanChoice, computerChoice]);
             computerScore++;
         }
     }
