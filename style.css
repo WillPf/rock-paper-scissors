@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    width: 60%;
+    margin: 4vh auto;
+    text-align: center;
+}
+.btn-ctn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+    margin: 2vh;
+}
+.choice-img {
+    border-radius: 25px;
+}
+.choice-img:hover {
+    cursor: pointer;
+    outline: 4px solid blue;
+}
+.result-ctn {
+    display: flex;
+    justify-content: center;
+    gap: 8vw;
+    margin-top: 10vh;
+}
