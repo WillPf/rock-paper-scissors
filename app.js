@@ -79,6 +79,10 @@ function endGame() {
         document.body.removeChild(end);
         score.innerHTML = `Score: ${humanScore} / ${computerScore}`;
         resultText.innerText = "";
+        while (resultContainer.firstChild) {
+            resultContainer.removeChild(resultContainer.firstChild);
+        }
+        
     })
     if (humanScore == 5) {
         end.innerText = "Congratulations, you won the game."
